@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+:root {
+  --fog-color: #d4d4d4;
+  --fog-dark: #b8b8b8;
+  --text-heading: rgba(0, 0, 0, 0.9);
+  --text-body: rgba(0, 0, 0, 0.6);
+  --accent-yellow: #F5A623;
+  --accent-yellow-hover: #e09418;
+  --bar-bg: rgba(28, 28, 28, 0.7);
+  --bar-border: rgba(255, 255, 255, 0.1);
+  --product-bg: #000000;
+  --product-card-bg: #111111;
+}
+
+@theme inline {
+  --color-fog: var(--fog-color);
+  --color-fog-dark: var(--fog-dark);
+  --color-heading: var(--text-heading);
+  --color-body: var(--text-body);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--fog-color);
+  color: var(--text-heading);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Top Bar Manual Alterations */
+.top-bar-container {
+  position: fixed;
+  top: 2rem;
+  /* 32px */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+.top-bar-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  max-width: 600px;
+  padding: 0.25rem;
+  /* 8px */
+  background-color: var(--bar-bg);
+  backdrop-filter: blur(24px);
+  border-radius: 9999px;
+  border: 1px solid var(--bar-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.logo-box {
+  flex-shrink: 0;
+  width: 2.75rem;
+  /* 44px */
+  height: 2.75rem;
+  /* 44px */
+  background-color: var(--accent-yellow);
+  border-radius: 1.5rem;
+  /* 16px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 14px;
+  letter-spacing: 0.025em;
+  color: #a1a1aa;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.login-btn {
+  height: 2.75rem;
+  /* 44px */
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  background-color: var(--accent-yellow);
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.login-btn:hover {
+  background-color: var(--accent-yellow-hover);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:active {
+  transform: scale(0.95);
+}
+
+/* Text Overlay Manual Alterations */
+.text-overlay-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cinematic-backdrop {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  /* Use overlayClass in TSX to set the specific background color/opacity */
+}
+
+.text-content-container {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.heading-text {
+  font-size: 2.25rem;
+  /* text-4xl */
+  line-height: normal;
+  letter-spacing: -0.025em;
+  /* tracking-tight */
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (min-width: 640px) {
+  .heading-text {
+    font-size: 3rem;
+  }
+}
+
+/* text-5xl */
+@media (min-width: 768px) {
+  .heading-text {
+    font-size: 3.75rem;
+  }
+}
+
+/* text-6xl */
+@media (min-width: 1024px) {
+  .heading-text {
+    font-size: 4.5rem;
+  }
+}
+
+/* text-7xl */
+
+.subtext-eyebrow {
+  font-size: 1rem;
+  /* text-base */
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  /* tracking-widest */
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 640px) {
+  .subtext-eyebrow {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .subtext-eyebrow {
+    font-size: 1.25rem;
+  }
+}
+
+/* Hide scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Subtle fade for text overlays */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.9);
+}
