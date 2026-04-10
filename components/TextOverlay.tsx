@@ -57,10 +57,7 @@ export default function TextOverlay({
     right: "items-end text-right",
   };
 
-  const paddingStyle = {
-    paddingLeft: alignment === "left" ? "100px" : "0px",
-    paddingRight: alignment === "right" ? "100px" : "0px",
-  };
+  const paddingStyle = {};
   // Vertical position centered for all layouts per user preference
   const verticalClasses = {
     left: "justify-center",
@@ -78,7 +75,7 @@ export default function TextOverlay({
 
       {/* Text Container */}
       <motion.div
-        className={`text-content-container ${alignClasses[alignment]} ${verticalClasses[alignment]}`}
+        className={`text-content-container site-padding ${alignClasses[alignment]} ${verticalClasses[alignment]}`}
         style={{ y, ...paddingStyle }}
       >
         <div className="max-w-xl flex flex-col">

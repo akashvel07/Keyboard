@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import KeyboardScroll from "@/components/KeyboardScroll";
 import TextOverlay from "@/components/TextOverlay";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,6 +64,7 @@ export default function Home() {
           isAccent
         />
       </div>
+      <Footer />
     </main>
   );
 }

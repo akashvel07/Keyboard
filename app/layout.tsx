@@ -24,8 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="min-h-full" style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
-        <TopBar />
-        {children}
+          <TopBar />
+          {children}
       </body>
     </html>
   );

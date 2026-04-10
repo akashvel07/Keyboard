@@ -20,6 +20,18 @@
   --color-body: var(--text-body);
 }
 
+.site-padding {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .site-padding {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -228,4 +240,54 @@ body {
 ::selection {
   background: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.9);
+}
+
+/* Newsletter Styles for manual editing */
+.newsletter-form {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.newsletter-input {
+  width: 100%;
+  background-color: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 1rem;
+  font-size: 14px;
+  color: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: #F5A623;
+  background-color: #1a1a1a;
+}
+
+.newsletter-button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  background-color: #F5A623;
+  color: black;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #e09418;
+  transform: translateY(-1px);
+}
+
+.newsletter-button:active {
+  transform: translateY(0);
 }
